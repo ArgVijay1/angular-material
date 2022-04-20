@@ -1,0 +1,14 @@
+.create-dialog{
+    width:420px;
+    align-items: center;
+}
+.create-dialog h1,h2{
+    text-align: center;
+}
+
+.create-dialog button{
+    align-items: center;
+    padding:15px;
+    margin: 15px;
+    text-align: center;
+}

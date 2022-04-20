@@ -1,0 +1,7 @@
+.right{
+    float: right;
+}
+.pad,mat-form-field{
+    align-content:space-between;
+    padding:10px;
+}

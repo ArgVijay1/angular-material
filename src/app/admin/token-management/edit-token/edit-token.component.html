@@ -1,0 +1,49 @@
+<h3>Edit Token Details</h3>
+<!--div class="create-dialog">
+  <div class="container">
+    <mat-card-content class="">
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Rate</mat-label>
+          <input matInput placeholder="Rate">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Date</mat-label>
+          <input matInput placeholder="Date">
+        </mat-form-field>
+      </p>
+  
+    
+        <div mat-dialog-actions>
+          <button mat-button >No Thanks</button>
+          <button mat-button cdkFocusInitial>Ok</button>
+        </div>
+      
+    </mat-card-content>
+  </div>
+</div-->
+<div class="create-dialog">
+  <div class="container">
+    <mat-card-content class="">
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Rate</mat-label>
+          <input matInput placeholder="Rate">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>{{ todayWithPipe }}</mat-label>
+          <input matInput placeholder="Date">
+        </mat-form-field>
+      </p>
+         <div mat-dialog-actions>
+          <button mat-button (click)="onNoClick()" >No Thanks</button>
+          <button mat-button cdkFocusInitial>Ok</button>
+        </div>
+      
+    </mat-card-content>
+  </div>
+</div>
