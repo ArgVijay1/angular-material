@@ -1,0 +1,66 @@
+<mat-form-field appearance="fill">
+    <mat-label>Select App</mat-label>
+    <mat-select [formControl]="appList" multiple>
+      <mat-select-trigger>
+        {{appList.value ? appList.value[0] : ''}}
+        <span *ngIf="appList.value?.length > 1" class="example-additional-selection">
+          (+{{appList.value.length - 1}} {{appList.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let id of toppingList" [value]="id">{{id}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<div class="example-container mat-elevation-z8">
+          <mat-table #table [dataSource]="dataSource">
+      <!-- Checkbox Column >
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container-->
+  
+      
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="rating">
+        <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rating}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="review">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+    
+          <button mat-button (click)="openReviewDialog()">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"
+               (click)="selection.toggle(row)">
+      </mat-row>
+    </mat-table>
+    
+  </div>
+  
+  

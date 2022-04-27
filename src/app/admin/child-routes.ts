@@ -56,7 +56,7 @@ export const childRoutes = [
       import('./user/user.module').then(
         m => m.UserModule
       ),
-    data: { icon: 'place', text: 'User Mgmt' }
+    data: { icon: 'account_box', text: 'User Mgmt' }
   },
   {
     path: 'app-mgmt',
@@ -64,15 +64,7 @@ export const childRoutes = [
       import('./app-management/app-management.module').then(
         m => m.AppManagementModule
       ),
-    data: { icon: 'place', text: 'App Mgmt' }
-  },
-  {
-    path: 'faq',
-    loadChildren: () =>
-      import('./faq/faq.module').then(
-        m => m.FaqModule
-      ),
-    data: { icon: 'place', text: 'FAQ' }
+    data: { icon: 'android', text: 'App Mgmt' }
   },
   {
     path: 'token-mgmt',
@@ -80,7 +72,23 @@ export const childRoutes = [
       import('./token-management/token-management.module').then(
         m => m.TokenManagementModule
       ),
-    data: { icon: 'place', text: 'Token Mgmt' }
+    data: { icon: 'stars', text: 'Token Mgmt' }
+  },
+  {
+    path: 'faq-mgmt',
+    loadChildren: () =>
+      import('./faq-management/faq-management.module').then(
+        m => m.FaqManagementModule
+      ),
+    data: { icon: 'place', text: 'FAQ Mgmt' }
+  },
+  {
+    path:'did-you-know',
+    loadChildren:()=>
+    import('./did-you-know/did-you-know.module').then(
+      m=> m.DidYouKnowModule
+    ),
+    data:{icon:'lightbulb', text:"Did You Know"}
   }
 
 ];

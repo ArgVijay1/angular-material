@@ -1,44 +1,47 @@
+
 <h3>Edit App Details</h3>
-<div class="create-dialog">
-  <div class="container">
-    <mat-card-content class="">
-      <p>
+<div class="container">
+  <mat-card-content class="">
+    <div class="example-container">
         <mat-form-field appearance="standard">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Name">
+          <input matInput [(ngModel)]="data.name" name="name">
         </mat-form-field>
-      </p>
-      <p>
         <mat-form-field appearance="standard">
           <mat-label>Description</mat-label>
-          <input matInput placeholder="Description">
+          <textarea class="fullwidth" matInput  [(ngModel)]="data.description" name="description" rows="4"></textarea>
         </mat-form-field>
-      </p>
-      <p>
+     
         <mat-form-field appearance="standard">
           <mat-label>Token</mat-label>
-          <input matInput placeholder="Token">
+          <input matInput [(ngModel)]="data.token"  name="token">
         </mat-form-field>
-      </p>
-      <p>
+     
         <mat-form-field appearance="standard">
-          <mat-label>IStore Link</mat-label>
-          <input matInput placeholder="IStore Link">
+          <mat-label>Rating</mat-label>
+          <input matInput [(ngModel)]="data.rating"  name="rating">
         </mat-form-field>
-      </p>
-      <p>
+     
+        <mat-form-field appearance="standard">
+          <mat-label>Downloads</mat-label>
+          <input matInput [(ngModel)]="data.downloads"  name="downloads">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>App Store Link</mat-label>
+          <textarea class="fullwidth" matInput [(ngModel)]="data.appstoreLink" name="appstoreLink"></textarea>
+        </mat-form-field>
+     
         <mat-form-field appearance="standard">
           <mat-label>Playstore Link</mat-label>
-          <input class="fullwidth" matInput placeholder="Playstore Link">
+          <textarea class="fullwidth" [(ngModel)]="data.playstoreLink" matInput name="playstoreLink" ></textarea>
         </mat-form-field>
-      </p>
     
         <div mat-dialog-actions>
           <button mat-button >No Thanks</button>
           <button mat-button cdkFocusInitial>Ok</button>
         </div>
-      
-    </mat-card-content>
-  </div>
   
+    </div>
+  </mat-card-content>
 </div>
+

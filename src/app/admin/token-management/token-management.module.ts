@@ -37,10 +37,24 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  exports:[
+    CommonModule,
+    TokenManagementRoutingModule,
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     FormsModule,
     ReactiveFormsModule,
-
   ]
 })
 export class TokenManagementModule { }
