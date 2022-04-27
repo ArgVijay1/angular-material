@@ -1,0 +1,38 @@
+<p>Edit Frequently Asked Questions</p>
+<!--div class="container">  
+    <div class="example-container">
+        <form>
+                <p>Name</p>
+                <input matInput name="name">
+          <br>
+          <p>Description</p>
+                <input class="fullwidth" matInput  name="description">
+              <div mat-dialog-actions>
+                <button mat-button mat-button >No Thanks</button>
+                <button mat-button cdkFocusInitial>Ok</button>
+              </div>
+        </form>
+    </div>   
+</div-->
+
+<div class="container">
+    <mat-card-content class="">
+      <div class="example-container">
+          <mat-form-field appearance="standard">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="app.title" name="title">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="standard">
+            <mat-label>Description</mat-label>
+            <textarea class="fullwidth" matInput  [(ngModel)]="app.description" name="description" rows="4"></textarea>
+          </mat-form-field>
+       
+          <div mat-dialog-actions>
+            <button (click)="onNoClick()" mat-button color="basic" >No Thanks</button>
+            <button mat-button color="primary" cdkFocusInitial>Ok</button>
+          </div>
+    
+      </div>
+    </mat-card-content>
+  </div>

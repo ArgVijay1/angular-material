@@ -1,0 +1,19 @@
+.container{
+    width:40vw
+}
+.container,.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container>* {
+    width: auto;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form>* {
+    margin: 5px 0;
+  }

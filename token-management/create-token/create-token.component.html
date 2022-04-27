@@ -1,0 +1,29 @@
+<h3>Add A Token</h3>
+<div class="create-dialog">
+    <div class="container">
+      <mat-card-content class="">
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Rate</mat-label>
+            <input type="textbox" matInput placeholder="Rate" TwoDecimalNumberDirective />
+          </mat-form-field>
+        </p>
+        <p>
+          <!--mat-form-field appearance="standard">
+            <mat-label>Date</mat-label>
+            <input matInput placeholder="Date">
+          </mat-form-field-->
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+          </mat-form-field>
+        </p>
+           <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">No Thanks</button>
+            <button mat-button cdkFocusInitial>Ok</button>
+          </div>
+        
+      </mat-card-content>
+    </div>
+  </div>
