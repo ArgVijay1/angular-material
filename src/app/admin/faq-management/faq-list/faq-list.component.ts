@@ -15,11 +15,24 @@ import { Faq } from '../faq.model';
 })
 export class FaqListComponent implements OnInit {
 
-  dataSource = new MatTableDataSource<Element>();
-  displayedColumns: string[] = ['id', 'title','description','action'];
+  dataSource = new MatTableDataSource<Faq>();
+  displayedColumns: string[] = ['title','description','action'];
   constructor(private appService:AppManagementService,private dialog:MatDialog) { }
   selection=new SelectionModel<Faq>(true,[]);
+ 
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
 
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
   ngOnInit(): void {
     this.appService.getFaqs().subscribe((res: any) => {
       //res.splice(0, 1);

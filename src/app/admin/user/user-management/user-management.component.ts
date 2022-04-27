@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 import { User } from '../user.model';
 
@@ -38,7 +39,9 @@ const ELEMENT_DATA:User[]=[
 export class UserManagementComponent implements OnInit {
   displayedColumns: string[] = ['Users', 'Email', 'Phone_No', 'Role',"action"];
   dataSource = [...ELEMENT_DATA]; // you can pass your data from backend her
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog,private titleService:Title) {
+    this.titleService.setTitle("User Management");
+   }
 
   ngOnInit(): void {
   }

@@ -2,6 +2,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Title } from '@angular/platform-browser';
 import { AppManagementService } from '../app-management/app-management.service';
 import { ReviewComponent } from '../app-management/review/review.component';
 import { DidYouKnow } from './did-you-know.model';
@@ -12,6 +13,10 @@ import { DidYouKnow } from './did-you-know.model';
   styleUrls: ['./did-you-know.component.scss']
 })
 export class DidYouKnowComponent implements OnInit {
+  
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("Did You Know");
+   }
   ngOnInit(): void {
    
   }

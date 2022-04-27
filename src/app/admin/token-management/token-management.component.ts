@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { CreateTokenComponent } from './create-token/create-token.component';
 import { EditTokenComponent } from './edit-token/edit-token.component';
 import { Token } from './token.model';
@@ -37,7 +38,9 @@ export class TokenManagementComponent implements OnInit {
   ngOnInit(): void {
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
   }
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog,private titleService:Title) {
+    this.titleService.setTitle("Token Management");
+   }
 
   openEditDialog(){
     const dialogRef = this.dialog.open(EditTokenComponent, {

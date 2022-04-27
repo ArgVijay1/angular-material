@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { AppManagementService } from '../../app-management/app-management.service';
 import { DidYouKnow } from '../did-you-know.model';
@@ -18,7 +19,10 @@ export class EditDidYouKnowComponent implements OnInit {
   }
   constructor(private appService:AppManagementService,
     private router:ActivatedRoute,
-    @Inject(MAT_DIALOG_DATA) public data: DidYouKnow) { }
+    public dialogRef: MatDialogRef<EditDidYouKnowComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DidYouKnow,private titleService:Title) {
+      this.titleService.setTitle("Edit | Did You Know");
+     }
   ngOnInit(): void {
     this.appService.getSingleFaq(this.data.id).subscribe(
       (data=>{
@@ -26,6 +30,13 @@ export class EditDidYouKnowComponent implements OnInit {
         console.log(this.app)
       })
     )
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  saveData(){
+    //console.log(this.userForm.value);
   }
 
 }
